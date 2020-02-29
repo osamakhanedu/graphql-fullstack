@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LogoutButton: React.FC<any> = () => {
+const LogoutButton= () => {
   return <div/>;
 }
 

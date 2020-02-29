@@ -9,23 +9,16 @@ import { ReactComponent as Curve } from '../assets/curve.svg';
 import { ReactComponent as Rocket } from '../assets/rocket.svg';
 import { colors, unit } from '../styles';
 
-interface LoginFormProps {
-  login: (a: { variables: any }) => void;
-}
 
-interface LoginFormState {
-  email: string;
-}
-
-export default class LoginForm extends Component<LoginFormProps, LoginFormState> {
+export default class LoginForm extends Component{
   state = { email: '' };
 
-  onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const email = (event.target as HTMLInputElement).value;
+  onChange = (event) => {
+    const email = (event.target).value;
     this.setState(s => ({ email }));
   };
 
-  onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.login({ variables: { email: this.state.email } });
   };

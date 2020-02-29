@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ActionButton: React.FC<any> = () => {
+const ActionButton= () => {
   return <div/>;
 }
 

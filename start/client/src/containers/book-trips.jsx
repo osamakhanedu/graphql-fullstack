@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookTrips: React.FC<any> = () => {
+const BookTrips = () => {
   return <div/>;
 }
 

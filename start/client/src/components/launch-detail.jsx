@@ -4,10 +4,10 @@ import styled from 'react-emotion';
 import { unit } from '../styles';
 import { cardClassName, getBackgroundImage } from './launch-tile';
 
-const LaunchDetail: React.FC<any> = ({ id, site, rocket }: any) => (
+const LaunchDetail  = ({ id, site, rocket }) => (
   <Card
     style={{
-      backgroundImage: getBackgroundImage(id as string),
+      backgroundImage: getBackgroundImage(id),
     }}
   >
     <h3>

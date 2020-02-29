@@ -12,19 +12,15 @@ const offset = 97; // letter A's charcode is 97
 const avatars = [dog1, dog2, dog3];
 const maxIndex = avatars.length - 1;
 
-function pickAvatarByEmail(email: string) {
+function pickAvatarByEmail(email) {
   const charCode = email.toLowerCase().charCodeAt(0) - offset;
   const percentile = Math.max(0, Math.min(max, charCode)) / max;
   return avatars[Math.round(maxIndex * percentile)];
 }
 
-interface HeaderProps {
-  image?: string | any;
-  children?: any;
-}
 
-const Header: React.FC<HeaderProps> = ({ image, children = 'Space Explorer' }) => {
-  const email = atob(localStorage.getItem('token') as string);
+const Header = ({ image, children = 'Space Explorer' }) => {
+  const email = atob(localStorage.getItem('token') );
   const avatar = image || pickAvatarByEmail(email);
 
   return (
@@ -50,7 +46,7 @@ const Container = styled('div')({
   marginBottom: unit * 4.5,
 });
 
-const Image = styled('img')(size(134), (props: { round: boolean }) => ({
+const Image = styled('img')(size(134), (props) => ({
   marginRight: unit * 2.5,
   borderRadius: props.round ? '50%' : '0%',
 }));
